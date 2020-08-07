@@ -141,16 +141,19 @@
                                         <input name="name" class="form-control" type="text" placeholder="Your Name *" required>
                                     </div>
                                     <div class="form-group">
-                                        <input name="email" class="form-control" type="email" placeholder="Your Email *">
+                                        <input name="email" class="form-control" type="email" placeholder="Your Email *" required>
                                     </div>
                                     <div class="form-group">
-                                        <input name="mobile_number" class="form-control" type="text" placeholder="Your Phone Number *">
+                                        <input name="mobile_number" class="form-control" type="text" placeholder="Your Phone Number *" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="address" placeholder="Your address + landmarks" requuired></textarea>
+                                        <textarea class="form-control" type="text" name="address" placeholder="Your address + landmarks" requuired></textarea>
+                                        <input id="timeStamp" type="text"  name="timeStamp" style="display:none;" value="add_timeStamp"/>
+                                        <input id="ordered_items" type="text"  name="ordered_items" style="display:none;" value="add_ordered_items"/>
+                                        <input id="total_price"  type="text"  name="total_price" style="display:none;" value="add_total_price"/>
                                     </div>
                                 </div>
 
@@ -163,13 +166,14 @@
 
                     </div>
                 </section>
-                
+
                 <script>
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwFu5uwkPSYbMlfEAuJox17plVQVDWSP8NTrF_myg_YQCSznAHw/exec'
                     const form = document.forms['submit-to-google-sheet']
                     const loading = document.querySelector('.js-loading')
                     const successMessage = document.querySelector('.js-success-message')
                     const errorMessage = document.querySelector('.js-error-message')
+                    
 
                     form.addEventListener('submit', e => {
                         e.preventDefault()
@@ -178,7 +182,7 @@
                             .catch(error => console.error('Error!', error.message))
                     })
                 </script>
-                
+
             </div>
 
             <div class="sectionWhite"></div>
