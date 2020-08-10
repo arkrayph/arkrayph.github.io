@@ -27,6 +27,8 @@ function ready() {
 }
 
 function purchaseClicked() {
+
+    // for timeStamp generation
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -35,13 +37,67 @@ function purchaseClicked() {
     document.getElementById("ordered_items").value = document.getElementsByClassName('cart-items')[0].innerText
     document.getElementById("total_price").value = document.getElementsByClassName('cart-total-price')[0].innerText;
 
-    // Submit the form
+
+    // for submitted form validation
+    var formName = document.forms["submit-to-google-sheet"]["name"].value;
+    var formEmail = document.forms["submit-to-google-sheet"]["email"].value;
+    var formMobile = document.forms["submit-to-google-sheet"]["mobile_number"].value;
+    var formAddress = document.forms["submit-to-google-sheet"]["address"].value;
+    var cartItems = document.getElementsByClassName('cart-total-price')[0].innerText;
+
+    if (formName == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+
+    if (formEmail == "")                               
+    { 
+        alert("Please enter a valid e-mail address."); 
+        formEmail.focus(); 
+        return false; 
+    } 
+
+    if (formMobile == "")                                   
+    { 
+        alert("Please enter your telephone number."); 
+        formMobile.focus(); 
+        return false; 
+    } 
+
+    if (formAddress == "")                           
+    { 
+        alert("Please enter your address."); 
+        formAddress.focus(); 
+        return false; 
+    } 
+
+    if (cartItems == "₱0")                           
+    { 
+        alert("You cart is empty"); 
+        formAddress.focus(); 
+        return false; 
+    }
+
     alert('Thank you for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal() 
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
 }
 
 function removeCartItem(event) {
