@@ -167,22 +167,6 @@
                     </div>
                 </section>
 
-                <script>
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEUqijSglYQkd273rwKHD9spYAvgcTZUSQ8m_cPZqnGzMagMk/exec'
-                    const form = document.forms['submit-to-google-sheet']
-                    const loading = document.querySelector('.js-loading')
-                    const successMessage = document.querySelector('.js-success-message')
-                    const errorMessage = document.querySelector('.js-error-message')
-                    
-
-                    form.addEventListener('submit', e => {
-                        e.preventDefault()
-                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                            .then(response => console.log('Success!', response))
-                            .catch(error => console.error('Error!', error.message))
-                    })
-                </script>
-
             </div>
 
             <div class="sectionWhite"></div>
