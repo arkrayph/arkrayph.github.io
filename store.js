@@ -43,6 +43,7 @@ function purchaseClicked() {
     var formEmail = document.forms["submit-to-google-sheet"]["email"].value;
     var formMobile = document.forms["submit-to-google-sheet"]["mobile_number"].value;
     var formAddress = document.forms["submit-to-google-sheet"]["address"].value;
+    var formDelivery = document.forms["submit-to-google-sheet"]["pref_deliveryDate"].value;
     var cartItems = document.getElementsByClassName('cart-total-price')[0].innerText;
 
     if (formName == "") {
@@ -74,6 +75,13 @@ function purchaseClicked() {
     if (cartItems == "₱0")                           
     { 
         alert("You cart is empty"); 
+        formAddress.focus(); 
+        return false; 
+    }
+    
+    if (formDelivery == "")                           
+    { 
+        alert("You preferred delivery date and time is empty"); 
         formAddress.focus(); 
         return false; 
     }
