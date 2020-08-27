@@ -69,6 +69,12 @@ textarea{
     width: 100%;
 }
 
+.addressBox{
+    border-radius: 0;
+    height: 86px !important;
+    width: 100%;
+}
+
 .footerImg {
   padding: 15px;
 }
