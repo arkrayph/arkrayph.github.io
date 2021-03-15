@@ -1,124 +1,184 @@
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <title>Arkray Co. Ltd. Inc.| Shop</title>
-                <meta name="description" content="This is the description">
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>Arkray Co. Ltd. Inc.| Shop</title>
+                    <meta name="description" content="This is the description">
 
-                <!-- Required meta tags -->
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <!-- Required meta tags -->
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
-                <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
-                <!--CSS-->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <link rel="stylesheet" href="main.css">
-                <script src="store.js" async></script>
-            </head>
-            <body>
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <a class="navbar-brand" href="index.html">Arkray Co. Ltd. Inc.</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="demo.html">Demo</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                        <br>
-                        <br>
-                        <br>
-
-                        <div style="text-align:center">
-                        <br>
-                        <br>
-                            <div class="col-sm-12 col-md-8 offset-md-2">
-                                        <img class="img-fluid" src="Assets/arkrayPHMLogo.jpg">
-                                        <h6 class="display-4"></h6>
-                                    </div>
-                        <br>
-                        <br>
-
-                        <h2>Tabbed Image Gallery</h2>
-                        <p>Click on the images below:</p>
-                        </div>
-                        <div class="sectionWhite">
-                        <!-- The four columns -->
-                        <div class="row">
-                          <div class="column">
-                            <img src="Assets/banner%2000.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
-                          </div>
-                          <div class="column">
-                            <img src="Assets/banner%2001.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
-                          </div>
-                          <div class="column">
-                            <img src="Assets/banner%2002.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
-                          </div>
-                          <div class="column">
-                            <img src="Assets/banner%2003.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
-                          </div>
-                        </div>
-
-                        <div class="container">
-                          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                          <img id="expandedImg" style="width:100%">
-                          <div id="imgtext"></div>
-                        </div>
-
-                        <script>
-                        function myFunction(imgs) {
-                          var expandImg = document.getElementById("expandedImg");
-                          var imgText = document.getElementById("imgtext");
-                          expandImg.src = imgs.src;
-                          imgText.innerHTML = imgs.alt;
-                          expandImg.parentElement.style.display = "block";
+                    <!-- Bootstrap CSS -->
+                    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+                    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
+                    <!--CSS-->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <link rel="stylesheet" href="main.css">
+                    <script src="store.js" async></script>
+                    <style>
+                        * {
+                          box-sizing: border-box;
                         }
-                        </script>
+
+                        body {
+                          margin: 0;
+                          font-family: Arial;
+                        }
+
+                        /* The grid: Four equal columns that floats next to each other */
+                        .column {
+                          float: left;
+                          width: 25%;
+                          padding: 10px;
+                        }
+
+                        /* Style the images inside the grid */
+                        .column img {
+                          opacity: 0.8; 
+                          cursor: pointer; 
+                        }
+
+                        .column img:hover {
+                          opacity: 1;
+                        }
+
+                        /* Clear floats after the columns */
+                        .row:after {
+                          content: "";
+                          display: table;
+                          clear: both;
+                        }
+
+                        /* The expanding image container */
+                        .container {
+                          position: relative;
+                          display: none;
+                        }
+
+                        /* Expanding image text */
+                        #imgtext {
+                          position: absolute;
+                          bottom: 15px;
+                          left: 15px;
+                          color: white;
+                          font-size: 20px;
+                        }
+
+                        /* Closable button inside the expanded image */
+                        .closebtn {
+                          position: absolute;
+                          top: 10px;
+                          right: 15px;
+                          color: white;
+                          font-size: 35px;
+                          cursor: pointer;
+                        }
+                    </style>
+
+                </head>
+                <body>
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <a class="navbar-brand" href="index.html">Arkray Co. Ltd. Inc.</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="demo.html">Demo</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    <!--Footer-->
-                    <footer class="footer bg-white">
-                        <div class="container-fluid">
+                            <br>
+                            <br>
+                            <br>
+
+                            <div style="text-align:center">
+                            <br>
+                            <br>
+                                <div class="col-sm-12 col-md-8 offset-md-2">
+                                            <img class="img-fluid" src="Assets/arkrayPHMLogo.jpg">
+                                            <h6 class="display-4"></h6>
+                                        </div>
+                            <br>
+                            <br>
+
+                            <h2>Tabbed Image Gallery</h2>
+                            <p>Click on the images below:</p>
+                            </div>
+                            <div class="sectionWhite">
+                            <!-- The four columns -->
                             <div class="row">
-                                <div class="col-sm-12 col-lg-3">
-                                    <br>
-                                    <img class="img-fluid footerImg" src="Assets/arkrayLogoWhite.jpg">
+                              <div class="column">
+                                <img src="Assets/banner%2000.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                              </div>
+                              <div class="column">
+                                <img src="Assets/banner%2001.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+                              </div>
+                              <div class="column">
+                                <img src="Assets/banner%2002.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+                              </div>
+                              <div class="column">
+                                <img src="Assets/banner%2003.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+                              </div>
+                            </div>
 
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <br>
-                                    <p><b>Location:</b> Unit 304 AA Corporate Plaza Civic Drive., Filinvest CIty, Alabang Muntinlupa City</p>
-                                    <p><b>Telephone No:</b> +63-2-843-4731</p>
-                                    <p> © 2020, Arkray PHM </p>
-                                </div>
-                                <!-- social media links -->
-                                <div class="col-sm-12 col-lg-3 socialWrapper">
+                            <div class="container">
+                              <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                              <img id="expandedImg" style="width:100%">
+                              <div id="imgtext"></div>
+                            </div>
 
-                                    <h5>Follow us on:</h5>
-                                    <a href="https://fb.me/arkrayPHM">
-                                        <i class="fa fa-facebook-square fa-3x aria-hidden="true"></i>
-                                                                                                </a>
+                            <script>
+                            function myFunction(imgs) {
+                              var expandImg = document.getElementById("expandedImg");
+                              var imgText = document.getElementById("imgtext");
+                              expandImg.src = imgs.src;
+                              imgText.innerHTML = imgs.alt;
+                              expandImg.parentElement.style.display = "block";
+                            }
+                            </script>
+                        </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        <!--Footer-->
+                        <footer class="footer bg-white">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-3">
+                                        <br>
+                                        <img class="img-fluid footerImg" src="Assets/arkrayLogoWhite.jpg">
 
-                                                                                                <i class="fa fa-instagram fa-3x aria-hidden="true"></i>
-                                        <i class="fa fa-twitter fa-3x aria-hidden="true"></i>
-                                                                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6">
+                                        <br>
+                                        <p><b>Location:</b> Unit 304 AA Corporate Plaza Civic Drive., Filinvest CIty, Alabang Muntinlupa City</p>
+                                        <p><b>Telephone No:</b> +63-2-843-4731</p>
+                                        <p> © 2020, Arkray PHM </p>
+                                    </div>
+                                    <!-- social media links -->
+                                    <div class="col-sm-12 col-lg-3 socialWrapper">
 
-                                                                                        </div>
-                                                                                        </div>
-                                                                                        </footer>
+                                        <h5>Follow us on:</h5>
+                                        <a href="https://fb.me/arkrayPHM">
+                                            <i class="fa fa-facebook-square fa-3x aria-hidden="true"></i>
+                                                                                                    </a>
+
+                                                                                                    <i class="fa fa-instagram fa-3x aria-hidden="true"></i>
+                                            <i class="fa fa-twitter fa-3x aria-hidden="true"></i>
+                                                                                            </div>
+
+                                                                                            </div>
+                                                                                            </div>
+                                                                                            </footer>
 
 
-                                                                                        </body>
-                                                                                        </html>
+                                                                                            </body>
+                                                                                            </html>
