@@ -1,1 +1,98 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Arkray Co. Ltd. Inc.| Diabetes DEMO</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            
+            <!-- for Form submission --> 
+            <script
+              src="https://code.jquery.com/jquery-3.4.1.js"
+              integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+            <script>
+            function SubForm (){
+                $.ajax({
+                    url:'https://api.apispreadsheets.com/data/16850/',
+                    type:'post',
+                    data:$("#myForm").serializeArray(),
+                    success: function(){
+                        location.replace("https://bit.ly/2Uv0q7w")
+                    },
+                    error: function(){
+                        location.replace("https://bit.ly/2Uv0q7w")
+                    }
+                });
+            }
+            </script>
+            
+            <style>
+            #body-container {
+                width: 100%;
+                height: 100vh;
+                background: url("Assets/exhibit_bgImage.png") center center no-repeat;
+                background-size: cover;
+                overflow-y: scroll;
+            }
+            </style>
+            
 
+            
+            
+        </head>
+        <body>
+        <!--Navigation Bar-->
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="https://bit.ly/2Uv0q7w">Premium Exhibitor: ARKRAY Co. Ltd., Inc.</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                </nav>
+            </div>
+            
+            <!-- BGM music --> 
+            <audio src="Assets/Sounds/bgm01.mp3" autoplay loop></audio>
+             
+            <!-- Guest List Form --> 
+            <div id="body-container">
+            <!-- Place your document contents here -->    
+                
+                <form id="myForm" style="position: relative;">
+                    <div style="position: absolute; left: 80px; top: 20px;"> 
+                        <div class="container">
+                            <p style="text-align:center;">
+                                <iframe title="vimeo-player" src="https://player.vimeo.com/video/477559040?autoplay=1&muted=1" width="450" height="280" frameborder="0" allowfullscreen allow=autoplay></iframe>
+                            </p>
+                        </div>
+                        <h5 class="modal-title">Pls. Sign Up our guest list (required)</h5>
+                            <div class="form-group">
+                                <label for="forName">Please tell us more about you?</label>
+                                <input name="full_name" type="text" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name="organization" type="text" class="form-control" placeholder="Name of Organization" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name="number" type="text" class="form-control" placeholder="Enter your number" required>
+                            </div>
+                                    
+                            <div class="form-group">
+                                <input name="email" type="text" class="form-control" placeholder="Enter your email address" required>
+                            </div>
+                            <input class="form-control" placeholder="- - -" required>
+                        
+                        <p>By pressing continue, you agree to Arkray's <a href="https://bit.ly/2RuqVIL">Terms of Service and Privacy Policy</a></p>
+                         
+                        <button class="btn btn-primary shop-item-button" onclick='SubForm()'>CONTINUE</button>
+                       
+                    </div>
+                </form>
+                
+            </div>
+            
+        </body>
+    </html>
