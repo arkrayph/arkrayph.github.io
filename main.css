@@ -235,3 +235,13 @@ textarea{
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+div.scrollView {
+    margin:5px;
+    padding:5px;
+    background-color: ghostwhite;
+    width: 500px;
+    height: 300px;
+    overflow: auto;
+    text-align:justify;
+}
