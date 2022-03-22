@@ -15,6 +15,13 @@
         <!--CSS-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="main.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#guestListModal").modal('show');
+        });
+        </script>
     </head>
 
     <body>
@@ -970,6 +977,37 @@
                             </div>
                         </div>
                     </div>
+                        
+                    <!--Webinar Modal-->
+                    <div id="guestListModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="contentLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="conatiner-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Image -->
+                                                <a href="https://bit.ly/3II9dXj">
+                                                    <img class="img-fluid" src="Assets/Events/Event%202022%2001.JPG">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary shop-item-button" data-toggle="modal" data-target=".webinar-modal-sm" data-dismiss="modal">DISMISS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                         <!--Footer-->
                         <footer class="footer bg-white">
@@ -1006,6 +1044,7 @@
                                                                                             <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
                         <script src="bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
-                                                                                     </body>
-
-                                                                                     </html>
+    
+                                                                                    
+    </body>
+</html>
